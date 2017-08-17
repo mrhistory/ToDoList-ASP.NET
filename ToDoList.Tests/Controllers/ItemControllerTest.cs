@@ -13,7 +13,7 @@ namespace ToDoList.Tests.Controllers
         [Test()]
         public void GetAll()
         {
-            var controller = new ItemsController();
+            var controller = new ItemController();
 
             var result = controller.Get();
 
@@ -23,7 +23,7 @@ namespace ToDoList.Tests.Controllers
         [Test()]
         public void Get()
         {
-            var controller = new ItemsController();
+            var controller = new ItemController();
             var item = controller.Insert(new Item("Test Item"));
 
             var result = controller.Get(item.Id);
@@ -35,7 +35,7 @@ namespace ToDoList.Tests.Controllers
         [Test()]
         public void Insert()
         {
-            var controller = new ItemsController();
+            var controller = new ItemController();
 
             var result = controller.Insert(new Item("Test Item"));
             var item = controller.Get(result.Id);
@@ -49,7 +49,7 @@ namespace ToDoList.Tests.Controllers
         [Test()]
         public void Update()
         {
-            var controller = new ItemsController();
+            var controller = new ItemController();
             var item = controller.Insert(new Item("Test Item"));
 
             item.Name = "Updated Test Item";
@@ -66,7 +66,7 @@ namespace ToDoList.Tests.Controllers
         [Test()]
         public void Delete()
         {
-            var controller = new ItemsController();
+            var controller = new ItemController();
             var item = controller.Insert(new Item("Test Item"));
 
             controller.Delete(item.Id);
